@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 20vh 80vh;
+    grid-template-areas: 
+    "header header"
+    "main aside"
+    ;
+}
+
+/* HEADER */
+header{
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.menu ul{
+    display: flex;
+    margin-top: 2em;
+}
+.menu ul li a{
+    margin-right: 3em;
+    font-size: 1.8em;
+    color: #766F68;
+    transition: 1.2s;
+}
+.menu ul li a:hover{
+    color: #D2872C;
+}
+.logo {
+    color: #D2872C;
+    font-size: 3em;
+    font-weight: 700;
+    margin-top: .5em;
+    margin-left: 3em;
+}
+
+/* MAIN */
+main {
+    grid-area: main;
+}
+
+
+main{
+    text-align: center;
+}
+main h1{
+    font-size: 600%;
+    text-align: center;
+    color: #766F68;
+    margin-top: 1em;
+}
+main p{
+    text-align: center;
+    font-size: 250%;
+    margin-top: 1em;
+    color: #766F68;
+}
+main button{
+    min-width: 40%;
+    padding: 1.2em;
+    border-radius: 32px;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 700;
+    background: #D2872C;
+    color: white;
+    margin-top: 2em;
+    cursor: pointer;
+    transition: 1s;
+}
+main button:hover{
+    opacity: 0.7;
+    color: black;
+}
+
+/* ASIDE */
+aside {
+    grid-area: aside;
+}
+
+aside img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+
+
+/* RESPONSIVE */ 
+@media (max-width: 1706px){
+    .container main h1{
+        font-size: 4em;
+    }
+    .container main p{
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 1300px){
+    .container main h1{
+        margin-top: 2em;
+    }
+    .menu ul li a{
+        font-size: 1.5em;
+    }
+    .logo {
+        font-size: 2em;
+        margin-top: .8em;
+    }
+}
+@media (max-width: 1090px){
+    .container main h1{
+        font-size: 3em;
+        margin-top: 2.5em;
+    }
+    .container main p{
+        font-size: 1.5em;
+    }
+    .container main button {
+        padding: .7em;
+    }
+    .menu ul li a{
+        font-size: 1.2em;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .container {
+        grid-template-areas: 
+        "header header"
+        "aside aside"
+        "main main";
+        grid-template-rows: 20vh 30vh 50vh;
+    }
+    .container main h1{
+        font-size: 3em;
+        margin-top: -.1em;
+    }
+    .container main p{
+        font-size: 1.3em;
+    }
+    .container button {
+        padding: .5em;
+    }
+    .menu ul li a{
+        display: none;
+    }
+    .logo {
+        font-size: 1.3em;
+        margin-left: 1em;
+    }
+}
